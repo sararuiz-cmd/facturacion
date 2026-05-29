@@ -1,5 +1,6 @@
 package ni.edu.uam.facturacion.modelo;
 import java.time.*;
+import java.util.Collection;
 import javax.persistence.*;
 
 import ni.edu.uam.facturacion.calculadores.CalculadorSiguienteNumeroParaAnyo;
@@ -36,6 +37,10 @@ public class Factura {
             // en el calculador antes de llamar a calculate()
     )
     int numero_cal;
+    @ManyToOne(fetch=FetchType.LAZY, optional=false) // El cliente es obligatorio
+    Cliente cliente;
+    @ElementCollection
+    Collection<Detalle> detalles;
 
 
 }
