@@ -11,11 +11,9 @@ public class Detalle {
 
     int cantidad;
 
+
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     Producto producto;
-    @ElementCollection
-    @ListProperties("producto.numero, producto.descripcion, cantidad")
-    Collection<Detalle> detalles;
 
 
 }
