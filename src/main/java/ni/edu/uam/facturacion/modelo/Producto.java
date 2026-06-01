@@ -2,14 +2,9 @@ package ni.edu.uam.facturacion.modelo;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.openxava.annotations.Files;
-import org.openxava.annotations.Money;
-import org.openxava.annotations.Required;
-import org.openxava.annotations.TextArea;
+import org.openxava.annotations.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -32,5 +27,8 @@ public class Producto {
 
     @TextArea // Esto es para un texto grande, se usará un área de texto o equivalente
     String observaciones;
+    @ManyToOne(fetch= FetchType.LAZY)
+    @DescriptionsList
+    Autor autor;
 
 }
