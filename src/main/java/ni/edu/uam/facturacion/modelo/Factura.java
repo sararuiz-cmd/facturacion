@@ -8,6 +8,12 @@ import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 import org.openxava.calculators.*;
 import lombok.*;
+@View(members= // Esta vista no tiene nombre, por tanto será la vista usada por defecto
+        "año, numero, fecha;" + // Separados por coma significa en la misma línea
+                "cliente;" + // Punto y coma significa nueva línea
+                "detalles;" +
+                "observaciones"
+)
 @Entity @Getter @Setter
 public class Factura {
 
